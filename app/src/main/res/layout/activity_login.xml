@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppThemeNoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/colorbackground"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/emone1" />
+
+    <EditText
+        android:layout_marginTop="34dp"
+        android:id="@+id/edUserName"
+        android:layout_width="304dp"
+        android:layout_height="53dp"
+
+        android:hint="admin" />
+
+    <EditText
+        android:layout_marginTop="16dp"
+        android:id="@+id/edPassLogin"
+        android:layout_width="304dp"
+        android:layout_height="53dp"
+        android:hint="admin" />
+
+    <CheckBox
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="28dp"
+        android:id="@+id/ckb"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Lưu mật khẩu" />
+
+    <Button
+        android:background="@color/colorbntdangnhap"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btnLogin"
+        android:onClick="login"
+        android:layout_width="304dp"
+        android:layout_height="50dp"
+        android:textColor="@color/color"
+        android:text="LOGIN" />
+
+    <Button
+        android:background="@color/colorbntthoat"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btnexit"
+        android:onClick="huy"
+        android:layout_width="304dp"
+        android:layout_height="50dp"
+        android:textColor="@color/color"
+        android:text="EXIT" />
+
+    <LinearLayout
+
+        android:layout_marginTop="23dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="@color/colorlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account?" />
+
+        <TextView
+            android:textColor="@color/colorloginSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Sign Up." />
+
+    </LinearLayout>
+</LinearLayout>
