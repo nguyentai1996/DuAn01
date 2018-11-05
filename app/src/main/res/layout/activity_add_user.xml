@@ -28,18 +28,18 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="80dp"
                 android:gravity="center"
-                android:textStyle="bold"
-                android:text="Change Password"
+                android:text="INFORMATION"
                 android:textColor="@color/colorr"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_below="@+id/toolbarchange"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Password"
+        android:hint="Name"
         android:inputType="textPassword" />
 
 
@@ -66,7 +66,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="25dp"
-        android:hint="Confirm Password"
+        android:hint="Password"
         android:inputType="textPassword" />
 
 
