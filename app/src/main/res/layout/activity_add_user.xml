@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".User_Activity"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -49,7 +50,7 @@
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/edPassword"
+        android:id="@+id/edName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -60,7 +61,7 @@
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/edConfirmpassword"
+        android:id="@+id/edPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -78,7 +79,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnChangePassword"
+            android:id="@+id/btnSave"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -90,7 +91,7 @@
 
         <Button
             android:layout_marginLeft="20dp"
-            android:id="@+id/btnHuyPassword"
+            android:id="@+id/btnexit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

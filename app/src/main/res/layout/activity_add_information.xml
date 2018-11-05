@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Add_Information_Activity"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbarchange"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginLeft="-5dp"
@@ -22,7 +23,7 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="match_parent"
-                android:onClick="outchange"
+                android:id="@+id/exit"
                 android:src="@drawable/exit" /> />
 
             <TextView
@@ -46,28 +47,36 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp"
         android:src="@drawable/hotel" />
-
-
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/edPassword"
+        android:id="@+id/edname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Password"
+        android:hint="Name"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/edPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Price"
         android:inputType="textPassword" />
 
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/edConfirmpassword"
+        android:id="@+id/edStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="25dp"
-        android:hint="Confirm Password"
+        android:hint="Status"
         android:inputType="textPassword" />
 
 
@@ -79,7 +88,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnChangePassword"
+            android:id="@+id/btnSave"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -91,7 +100,7 @@
 
         <Button
             android:layout_marginLeft="20dp"
-            android:id="@+id/btnHuyPassword"
+            android:id="@+id/btnExit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
