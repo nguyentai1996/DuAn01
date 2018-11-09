@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/User"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Name" />
+
+    <EditText
+        android:id="@+id/Pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pass Word"
+         />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Name" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edChucvu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Chức Vụ" />
+
+</LinearLayout>

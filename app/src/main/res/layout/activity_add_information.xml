@@ -55,7 +55,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Name"
-        android:inputType="textPassword" />
+         />
 
     <EditText
         android:layout_marginTop="15dp"
@@ -65,7 +65,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Price"
-        android:inputType="textPassword" />
+        android:inputType="number"
+        />
 
 
     <EditText
@@ -77,7 +78,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="25dp"
         android:hint="Status"
-        android:inputType="textPassword" />
+         />
 
 
     <LinearLayout
@@ -88,7 +89,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnSave"
+            android:onClick="Save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -100,7 +101,7 @@
 
         <Button
             android:layout_marginLeft="20dp"
-            android:id="@+id/btnExit"
+            android:onClick="exit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

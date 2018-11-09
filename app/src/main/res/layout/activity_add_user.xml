@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User_Activity"
+    tools:context=".EditUser"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -22,19 +22,19 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="match_parent"
-                android:onClick="outchange"
+                android:id="@+id/exit"
                 android:src="@drawable/exit" />
 
-            <TextView
+            <!--<TextView-->
 
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="80dp"
-                android:gravity="center"
-                android:text="INFORMATION"
-                android:textColor="@color/colorr"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginLeft="80dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="USER"-->
+                <!--android:textColor="@color/colorr"-->
+                <!--android:textSize="20dp"-->
+                <!--android:textStyle="bold" />-->
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
@@ -56,19 +56,19 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Name"
-        android:inputType="textPassword" />
+         />
 
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/edPassword"
+        android:id="@+id/edPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="25dp"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:hint="Chức Vụ"
+        />
 
 
     <LinearLayout
@@ -85,7 +85,7 @@
             android:layout_marginTop="5dp"
             android:layout_weight="1"
             android:background="@color/colorbntdangnhap"
-
+            android:onClick="updateUser"
             android:text="Save"
             android:textColor="@color/color" />
 

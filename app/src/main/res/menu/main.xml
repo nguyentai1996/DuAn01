@@ -4,6 +4,7 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="add"
+        android:title="Add"
+        android:onClick="add"
         app:showAsAction="never" />
 </menu>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,13 +28,4 @@
             android:text="luot dat" />
     </LinearLayout>
 
-    <ListView
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/lv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ListView>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
