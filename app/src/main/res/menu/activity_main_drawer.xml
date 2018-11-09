@@ -17,10 +17,6 @@
             android:id="@+id/nav_quanli"
             android:icon="@drawable/mana"
             android:title="QUẢN LÍ" />
-        <item
-            android:id="@+id/nav_statistical"
-            android:icon="@drawable/mana"
-            android:title="THỐNG KÊ" />
 
     </group>
 

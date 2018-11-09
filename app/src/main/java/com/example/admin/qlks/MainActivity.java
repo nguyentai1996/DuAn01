@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_thongke) {
-            Intent intent= new Intent(this,Add_Information_Activity.class);
+            Intent intent= new Intent(this,StatisticalActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_changepass) {
             Intent intent= new Intent(this,ChangePassActivity.class);
@@ -82,9 +82,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_quanli) {
             Intent intent= new Intent(this,UserActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_statistical) {
-            Intent intent= new Intent(this,StatisticalActivity.class);
-            startActivity(intent);
+
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_out) {
