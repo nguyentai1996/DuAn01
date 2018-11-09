@@ -71,7 +71,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void exit(View view) {
-        finish();
+        edUserName.setText("");
+        edPassword.setText("");
     }
 
 
