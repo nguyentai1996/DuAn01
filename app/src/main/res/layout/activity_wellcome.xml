@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:theme="@style/AppThemeNoActionBar"
-    android:background="@color/colorPrimary"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".WelCome_Activity"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:orientation="vertical">
 
-    <ImageView
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:layout_marginTop="200dp"
+            android:src="@drawable/welcomee" />
+
+    </LinearLayout>
+    <TextView
+        android:textColor="@color/lightorangedark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:text="HOTEL FLASH"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+
+
+        />
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_marginTop="85dp"
         android:layout_width="wrap_content"
-        android:layout_height="260dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/wellcome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="@drawable/spaceullustration">
 
-</android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

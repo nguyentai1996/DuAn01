@@ -1,10 +1,10 @@
-package com.example.admin.qlks.ui;
+package com.example.admin.qlks.adapter;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,13 +16,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-import com.example.admin.qlks.ChangePassActivity;
 import com.example.admin.qlks.EditUser;
-import com.example.admin.qlks.R;
-import com.example.admin.qlks.adapter.UserAdapter;
-import com.example.admin.qlks.database.UserDAO;
 import com.example.admin.qlks.model.User;
+import com.example.admin.qlks.R;
+import com.example.admin.qlks.database.UserDAO;
 
 import java.util.List;
 
@@ -45,13 +42,7 @@ public class UserActivity extends AppCompatActivity {
         list = userDAO.getAllUser();
         toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        imageView=findViewById(R.id.imgexit);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
         adapter = new UserAdapter(this, list);
         listView.setAdapter(adapter);
 
@@ -80,7 +71,7 @@ public class UserActivity extends AppCompatActivity {
         builder.setView(viewDialog);
         edName = viewDialog.findViewById(R.id.Name);
         edPass = viewDialog.findViewById(R.id.Pass);
-        edPhone = viewDialog.findViewById(R.id.edChucvu);
+        edPhone = viewDialog.findViewById(R.id.Phone);
         edUser = viewDialog.findViewById(R.id.User);
         builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
             @Override
@@ -131,6 +122,7 @@ public class UserActivity extends AppCompatActivity {
 
 
     public void exit(View view) {
+        finish();
     }
 }
 

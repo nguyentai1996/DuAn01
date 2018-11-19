@@ -1,7 +1,5 @@
 package com.example.admin.qlks.model;
 
-import java.security.PublicKey;
-
 public class User {
     private String userName;
     private String password;
@@ -29,14 +27,6 @@ public class User {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -45,7 +35,16 @@ public class User {
         this.phone = phone;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public User(String userName, String password, String name, String phone) {
+
         this.userName = userName;
         this.password = password;
         this.name = name;

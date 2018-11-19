@@ -20,16 +20,11 @@ public class EditUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_user);
-        editName=findViewById(R.id.edName);
+        setContentView(R.layout.activity_edit_user);
+        editName=findViewById(R.id.edFullName);
         editPhone=findViewById(R.id.edPhone);
-        imageView=findViewById(R.id.exit);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
+
         userDAO=new UserDAO(this);
         Intent in = getIntent();
         Bundle b = in.getExtras();
@@ -48,5 +43,9 @@ public class EditUser extends AppCompatActivity {
     }
 
     public void Huy(View view) {
+    }
+
+    public void exit(View view) {
+        finish();
     }
 }

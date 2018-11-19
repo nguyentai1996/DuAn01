@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".ui.UserActivity">
+    tools:context=".adapter.UserActivity">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarchange"
         android:layout_width="match_parent"
@@ -19,7 +20,6 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imgexit"
                 android:layout_width="35dp"
                 android:layout_height="match_parent"
                 android:onClick="exit"
@@ -31,26 +31,30 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="90dp"
                 android:gravity="center"
-                android:text="USER MAIN"
+                android:text="EDIT USER"
                 android:textColor="@color/colorr"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
+                android:onClick="them"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="63dp"
+                android:layout_marginLeft="85dp"
                 android:gravity="center"
-                android:onClick="them"
                 android:text="ADD"
-                android:textColor="@color/colorrr"
-                android:textSize="16dp" />
+                android:textColor="@color/colorr"
+                android:textSize="18dp"
+              />
         </LinearLayout>
+
+
     </android.support.v7.widget.Toolbar>
 
-    <ListView
 
+
+    <ListView
         android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"></ListView>
 </LinearLayout>

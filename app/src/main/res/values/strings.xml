@@ -6,4 +6,26 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="alertsuccessfully">Save Successfully</string>
+    <string name="empty">This information cann ot be empty</string>
+    <string name="maximum10">Maximum length is 10 characters</string>
+    <string name="agemaximum">Maximum age is 10</string>
+    <string name="min1">Minimum weight is 1 kq</string>
+    <string name="namepet">Name</string>
+    <string name="agepet">Age</string>
+    <string name="weightpet">Weight</string>
+    <string name="malepet">Male</string>
+    <string name="female">Female</string>
+    <string name="save">Save</string>
+    <string name="pet">Pet</string>
+    <string name="finish_plan">You have completed the plan</string>
+    <string name="save_error">Save error</string>
+    <string name="app_name2">Happy Pets</string>
+    <string name="event">Bạn có sự kiện hôm nay</string>
+    <string name="error_empty">Username must not empty</string>
+    <string name="error_emptyps">Password must not empty</string>
+    <string name="error_length"><![CDATA[Password length must > 6]]></string>
+    <string name="gt">The first and most important thing when you participate in traffic is compliance with traffic laws and traffic lights. Traffic laws are the laws that you must follow to ensure the safety and efficient for traffic between vehicles</string>
+    <string name="error_user">Username incorrect</string>
+    <string name="error_pass">Password incorrect</string>
 </resources>

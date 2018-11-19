@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-
+        android:onClick="edit"
         android:layout_width="match_parent"
         android:layout_height="119dp"
         android:gravity="center_vertical"

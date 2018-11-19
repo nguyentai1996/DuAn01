@@ -15,10 +15,9 @@ import android.widget.TextView;
 
 
 import com.example.admin.qlks.EditUser;
+import com.example.admin.qlks.model.User;
 import com.example.admin.qlks.R;
 import com.example.admin.qlks.database.UserDAO;
-import com.example.admin.qlks.model.User;
-
 
 import java.util.List;
 
@@ -69,6 +68,7 @@ public class UserAdapter extends BaseAdapter {
             holder.txtPhone = (TextView) convertView.findViewById(R.id.tvPhone);
             holder.imgDelete = (ImageView) convertView.findViewById(R.id.ivDelete);
             holder.imgEdit = convertView.findViewById(R.id.ivEdit);
+
             holder.imgEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

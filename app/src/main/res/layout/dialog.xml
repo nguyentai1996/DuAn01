@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Pass Word"
-         />
+        android:inputType="text" />
 
     <EditText
         android:inputType="text"
@@ -27,10 +27,10 @@
         android:hint="Your Name" />
 
     <EditText
-        android:inputType="text"
-        android:id="@+id/edChucvu"
+        android:inputType="number"
+        android:id="@+id/Phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Chức Vụ" />
+        android:hint="Phone" />
 
 </LinearLayout>

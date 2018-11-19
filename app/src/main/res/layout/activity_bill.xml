@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".bill.BillActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarchange"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginLeft="-5dp"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:onClick="exit"
+                android:src="@drawable/exit" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="125dp"
+                android:gravity="center"
+                android:text="Bill"
+                android:textColor="@color/colorr"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <EditText
+        android:id="@+id/edMaHoaDon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mã hoá đơn" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <EditText
+            android:id="@+id/edNgayMua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:hint="DD-MM-YYYY"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/picDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="datePicker"
+            android:text="Chọn" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnADDHoaDon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ADDHoaDon"
+        android:text="Chọn" />
+</LinearLayout>

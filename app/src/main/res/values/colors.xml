@@ -12,4 +12,6 @@
     <color name="colorbackground">#08B9B9</color>
     <color name="colorr">#381B1B</color>
     <color name="colorrr">#000000</color>
+    <color name="lightorange">#fdf2df</color>
+    <color name="lightorangedark">#ebd6ab</color>
 </resources>

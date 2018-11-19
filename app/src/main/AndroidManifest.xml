@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.qlks">
-
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WellComeActivity"
+        <activity
+            android:name=".WelCome_Activity"
             android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,25 +20,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity android:name=".Login_Activity" />
+        <activity android:name=".roomtype.RoomType_Activity"
             android:theme="@style/AppThemeNoActionBar"/>
-        <activity android:name=".Add_Information_Activity"
+        <activity android:name=".roomtype.ListTypeActivity"
             android:theme="@style/AppThemeNoActionBar"/>
-        <activity
-            android:name=".LoginActivity"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity
-            android:name=".ui.UserActivity"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity
-        android:name=".EditUser"
-        android:theme="@style/AppThemeNoActionBar" />
-        <activity
-            android:name=".ChangePassActivity"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity
-            android:name=".StatisticalActivity"
-            android:theme="@style/AppThemeNoActionBar" />
+        <activity android:name=".roomtype.EditType"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".room.AddRoomActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".room.ListRoomActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".bill.BillActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".bill.ListBillActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".toproom.PersonBookingActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".toproom.RevenueStatisticsActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".billdetail.BillDetailActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".billdetail.BillDetailByIDActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".adapter.UserActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+<activity android:name=".EditUser" android:theme="@style/AppThemeNoActionBar"/>
     </application>
 
 </manifest>

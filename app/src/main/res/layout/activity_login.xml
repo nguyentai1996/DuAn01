@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/img"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="148dp"
+        android:layout_height="148dp"
         android:src="@drawable/emone1" />
 
     <EditText
@@ -40,6 +40,7 @@
     <Button
         android:background="@color/colorbntdangnhap"
         android:layout_marginTop="16dp"
+        android:id="@+id/btnLogin"
         android:onClick="login"
         android:layout_width="304dp"
         android:layout_height="50dp"
@@ -49,11 +50,12 @@
     <Button
         android:background="@color/colorbntthoat"
         android:layout_marginTop="16dp"
-        android:onClick="exit"
+        android:id="@+id/btnexit"
+        android:onClick="huy"
         android:layout_width="304dp"
         android:layout_height="50dp"
         android:textColor="@color/color"
-        android:text="DELETE" />
+        android:text="EXIT" />
 
     <LinearLayout
 

@@ -40,6 +40,7 @@
     </android.support.v7.widget.Toolbar>
 
     <ImageView
+        android:id="@+id/imgAdd"
         android:layout_width="match_parent"
         android:layout_height="189dp"
         android:layout_below="@+id/toolbarchange"
@@ -47,26 +48,28 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp"
         android:src="@drawable/hotel" />
+
+
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/edname"
+        android:id="@+id/edID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Name"
-         />
+        android:hint="Room"
+        android:inputType="number"
+        />
 
     <EditText
-        android:layout_marginTop="15dp"
         android:id="@+id/edPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
         android:hint="Price"
-        android:inputType="number"
-        />
+        android:inputType="number" />
 
 
     <EditText
@@ -89,6 +92,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btnSave"
             android:onClick="Save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

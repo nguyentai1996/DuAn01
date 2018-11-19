@@ -5,7 +5,6 @@
     android:orientation="vertical">
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center_vertical"
@@ -13,7 +12,7 @@
         android:padding="5dp">
 
         <ImageView
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:id="@+id/img"
             android:layout_width="0dp"
             android:layout_height="70dp"
@@ -29,8 +28,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:gravity="center"
-                android:layout_marginTop="10dp"
                 android:textAllCaps="true"
                 android:id="@+id/tvName"
                 android:layout_width="match_parent"
@@ -40,11 +37,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/tvPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chuc vu" />
+                android:gravity="center_vertical"
+                android:text="Phone" />
         </LinearLayout>
 
         <ImageView
