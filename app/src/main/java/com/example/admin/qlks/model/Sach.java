@@ -1,6 +1,6 @@
 package com.example.admin.qlks.model;
 
-public class Room {
+public class Sach {
     private String maSach;
     private String maTheLoai;
     private String tenSach;
@@ -65,11 +65,11 @@ public class Room {
         this.soLuong = soLuong;
     }
 
-    public Room() {
+    public Sach() {
 
     }
 
-    public Room(String maSach, String maTheLoai, String tenSach, String tacGia, String NXB, double giaBia, int soLuong) {
+    public Sach(String maSach, String maTheLoai, String tenSach, double giaBia) {
         this.maSach = maSach;
         this.maTheLoai = maTheLoai;
         this.tenSach = tenSach;

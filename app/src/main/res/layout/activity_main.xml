@@ -21,17 +21,13 @@ tools:context=".MainActivity">
             android:orientation="horizontal">
 
 
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="match_parent"
-                android:id="@+id/exit"
-                android:src="@drawable/exit" /> />
+
 
             <TextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="120dp"
                 android:gravity="center"
                 android:text="INFORMATION"
                 android:textColor="@color/colorr"
@@ -40,264 +36,187 @@ tools:context=".MainActivity">
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
-<GridLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="10"
-    android:alignmentMode="alignMargins"
-    android:columnCount="2"
-    android:columnOrderPreserved="false"
-    android:padding="14dp"
-    android:rowCount="3">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+       android:padding="14dp"
+        android:columnOrderPreserved="false"
+        android:layout_marginTop="100dp"
+        android:rowCount="3">
 
 
-    <android.support.v7.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="86dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
 
 
-        >
+            >
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-
-            <ImageView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="79dp"
-                android:layout_gravity="center_horizontal"
-                android:onClick="user"
-                android:src="@drawable/emone" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
-            <TextView
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="79dp"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="user"
+                    android:src="@drawable/emone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="7dp"
+                    android:text="BOSS"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+
+
+            >
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp"
-                android:text="BOSS"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="86dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
 
-        >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="79dp"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="sach"
+                    android:src="@drawable/emone" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="7dp"
+                    android:text="ME"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
 
 
-            <ImageView
+            >
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="79dp"
-                android:layout_gravity="center_horizontal"
-                android:onClick="TheLoai"
-                android:src="@drawable/emone" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
-            <TextView
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="79dp"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="hoadon"
+                    android:src="@drawable/emone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="7dp"
+                    android:text="ME"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+
+
+            >
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp"
-                android:text="ME"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="86dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
 
-        >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="79dp"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="viewthongke"
+                    android:src="@drawable/emone" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="7dp"
+                    android:text="ME"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="79dp"
-                android:layout_gravity="center_horizontal"
-                android:onClick="sach"
-                android:src="@drawable/emone" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp"
-                android:text="ME"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="86dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-
-
-        >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="79dp"
-                android:layout_gravity="center_horizontal"
-                android:onClick="hoadon"
-                android:src="@drawable/emone" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp"
-                android:text="ME"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="86dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-
-
-        >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="79dp"
-                android:layout_gravity="center_horizontal"
-                android:onClick="viewtop10"
-                android:src="@drawable/emone" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp"
-                android:text="ME"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="86dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-
-
-        >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="79dp"
-                android:layout_gravity="center_horizontal"
-                android:onClick="viewthongke"
-                android:src="@drawable/emone" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp"
-                android:text="ME"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-</GridLayout>
+    </GridLayout>
 </LinearLayout>

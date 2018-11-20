@@ -14,61 +14,56 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 
-import com.example.admin.qlks.billdetail.BillDetailByIDActivity;
-import com.example.admin.qlks.model.Bill;
 import com.example.admin.qlks.R;
-import com.example.admin.qlks.adapter.BillAdapter;
-import com.example.admin.qlks.database.BillDAO;
+import com.example.admin.qlks.adapter.HoaDonAdapter;
+import com.example.admin.qlks.billdetail.ListHoaDonChiTietByIDActivity;
+import com.example.admin.qlks.database.HoaDonDAO;
+import com.example.admin.qlks.model.HoaDon;
 
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListBillActivity extends AppCompatActivity {
+public class ListHoaDonActivity extends AppCompatActivity {
     private ImageView imageView;
-    public List<Bill> dsBill = new ArrayList<>();
+    public List<HoaDon> dsHoaDon = new ArrayList<>();
     ListView lvHoaDon;
-    BillAdapter adapter = null;
-    BillDAO billDAO;
+    HoaDonAdapter adapter = null;
+    HoaDonDAO hoaDonDAO;
     private FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_bill);
-        imageView = findViewById(R.id.outbill);
+        setContentView(R.layout.activity_list_hoa_don);
+
         floatingActionButton = findViewById(R.id.floatAddHoadon);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ListBillActivity.this, BillActivity.class);
+                Intent intent = new Intent(ListHoaDonActivity.this, HoaDonActivity.class);
                 startActivity(intent);
             }
         });
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
         setTitle("HOÁ ĐƠN");
         lvHoaDon = (ListView) findViewById(R.id.lvHoaDon);
-        billDAO = new BillDAO(ListBillActivity.this);
+        hoaDonDAO = new HoaDonDAO(ListHoaDonActivity.this);
         try {
-            dsBill = billDAO.getAllHoaDon();
+            dsHoaDon = hoaDonDAO.getAllHoaDon();
         } catch (Exception e) {
             Log.d("Error: ", e.toString());
         }
-        adapter = new BillAdapter(this, dsBill);
+        adapter = new HoaDonAdapter(this, dsHoaDon);
         lvHoaDon.setAdapter(adapter);
         lvHoaDon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                Bill bill = (Bill) parent.getItemAtPosition(position);
-                Intent intent = new Intent(ListBillActivity.this, BillDetailByIDActivity.class);
+                HoaDon hoaDon = (HoaDon) parent.getItemAtPosition(position);
+                Intent intent = new Intent(ListHoaDonActivity.this, ListHoaDonChiTietByIDActivity.class);
                 Bundle b = new Bundle();
-                b.putString("MAHOADON", bill.getMaHoaDon());
+                b.putString("MAHOADON", hoaDon.getMaHoaDon());
                 intent.putExtras(b);
                 startActivity(intent);
             }
@@ -98,12 +93,12 @@ public class ListBillActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        dsBill.clear();
+        dsHoaDon.clear();
         try {
-            dsBill = billDAO.getAllHoaDon();
+            dsHoaDon = hoaDonDAO.getAllHoaDon();
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        adapter.changeDataset(dsBill);
+        adapter.changeDataset(dsHoaDon);
     }
 }

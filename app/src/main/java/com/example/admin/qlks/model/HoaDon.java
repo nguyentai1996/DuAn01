@@ -2,11 +2,11 @@ package com.example.admin.qlks.model;
 
 import java.util.Date;
 
-public class Bill {
+public class HoaDon {
     private String maHoaDon;
     private Date ngayMua;
 
-    public Bill() {
+    public HoaDon() {
 
     }
 
@@ -26,7 +26,7 @@ public class Bill {
         this.ngayMua = ngayMua;
     }
 
-    public Bill(String maHoaDon, Date ngayMua) {
+    public HoaDon(String maHoaDon, Date ngayMua) {
 
         this.maHoaDon = maHoaDon;
         this.ngayMua = ngayMua;

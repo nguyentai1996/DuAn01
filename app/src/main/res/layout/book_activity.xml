@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_height="match_parent"
     tools:context=".room.ListRoomActivity">
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginLeft="-10dp"
-        android:background="@color/colorbntdangnhap"
+        android:background="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -29,14 +28,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 android:gravity="center_vertical"
-                android:text="AddBook"
+                android:text="ADDBOOK"
                 android:textColor="#fff"
                 android:textSize="22sp" />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,75 +42,43 @@
         android:padding="10dp">
 
         <EditText
+            android:inputType="number"
             android:id="@+id/edMaSach"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:hint="Số Phòng" />
 
-        <LinearLayout
+
+
+    <EditText
+        android:id="@+id/edTenSach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Loại Phòng" />
+
+    <EditText
+        android:id="@+id/edTacGia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Trạng Thái" />
+
+
+
+        <EditText
+            android:id="@+id/edGiaBia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/edGiaBia"
-                android:layout_width="128dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:hint="Loại phòng"
-                android:textSize="18sp" />
-
-            <Spinner
-                android:id="@+id/spnTheLoai"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:paddingTop="15dp" />
+            android:hint="Giá"
+            android:inputType="number" />
 
 
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content">
-
-            <TextView
-
-                android:layout_width="128dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:hint="Status"
-                android:textSize="18sp" />
-            <RadioButton
-                android:id="@+id/rdCon"
-                android:layout_width="118dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-
-                android:text="Còn Phòng" />
-
-            <RadioButton
-                android:id="@+id/rdHet"
-                android:layout_width="118dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-
-                android:text="Hết Phòng" />
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:orientation="horizontal"
+        android:layout_marginTop="15dp"
         android:weightSum="2">
 
         <Button

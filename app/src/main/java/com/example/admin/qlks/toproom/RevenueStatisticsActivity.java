@@ -7,13 +7,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.admin.qlks.R;
-import com.example.admin.qlks.database.BillDetailDAO;
+import com.example.admin.qlks.database.HoaDonChiTietDAO;
 
 
 public class RevenueStatisticsActivity extends AppCompatActivity {
     ImageView imageView;
     TextView tvNgay, tvThang, tvNam;
-    BillDetailDAO billDetailDAO;
+    HoaDonChiTietDAO hoaDonChiTietDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +29,10 @@ public class RevenueStatisticsActivity extends AppCompatActivity {
         tvNgay = (TextView) findViewById(R.id.tvThongKeNgay);
         tvThang = (TextView) findViewById(R.id.tvThongKeThang);
         tvNam = (TextView) findViewById(R.id.tvThongKeNam);
-        billDetailDAO = new BillDetailDAO(this);
-        tvNgay.setText("Hôm nay: " + billDetailDAO.getDoanhThuTheoNgay());
-        tvThang.setText("Tháng này: " + billDetailDAO.getDoanhThuTheoThang());
-        tvNam.setText("Năm này: " + billDetailDAO.getDoanhThuTheoNam());
+        hoaDonChiTietDAO = new HoaDonChiTietDAO(this);
+        tvNgay.setText("Hôm nay: " + hoaDonChiTietDAO.getDoanhThuTheoNgay());
+        tvThang.setText("Tháng này: " + hoaDonChiTietDAO.getDoanhThuTheoThang());
+        tvNam.setText("Năm này: " + hoaDonChiTietDAO.getDoanhThuTheoNam());
     }
 }
+

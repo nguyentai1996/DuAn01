@@ -1,4 +1,4 @@
- package com.example.admin.qlks.bill;
+package com.example.admin.qlks.bill;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -14,25 +14,26 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
-import com.example.admin.qlks.billdetail.BillDetailActivity;
-import com.example.admin.qlks.model.Bill;
 import com.example.admin.qlks.R;
-import com.example.admin.qlks.database.BillDAO;
+import com.example.admin.qlks.billdetail.HoaDonChiTietActivity;
+import com.example.admin.qlks.database.HoaDonDAO;
+import com.example.admin.qlks.model.HoaDon;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class BillActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class HoaDonActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     private ImageView imageView;
     EditText edNgayMua, edMaHoaDon;
-    BillDAO billDAO;
+    HoaDonDAO hoaDonDAO;
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill);
+
         edNgayMua = (EditText) findViewById(R.id.edNgayMua);
         edMaHoaDon = (EditText) findViewById(R.id.edMaHoaDon);
 
@@ -69,16 +70,16 @@ public class BillActivity extends AppCompatActivity implements DatePickerDialog.
     }
 
     public void ADDHoaDon(View view) {
-        billDAO = new BillDAO(BillActivity.this);
+        hoaDonDAO = new HoaDonDAO(HoaDonActivity.this);
         try {
             if (validation() < 0) {
                 Toast.makeText(getApplicationContext(), "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             } else {
-                Bill bill = new
-                        Bill(edMaHoaDon.getText().toString(), sdf.parse(edNgayMua.getText().toString()));
-                if (billDAO.inserHoaDon(bill) > 0) {
+                HoaDon hoaDon = new
+                        HoaDon(edMaHoaDon.getText().toString(), sdf.parse(edNgayMua.getText().toString()));
+                if (hoaDonDAO.inserHoaDon(hoaDon) > 0) {
                     Toast.makeText(getApplicationContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(BillActivity.this, BillDetailActivity.class);
+                    Intent intent = new Intent(HoaDonActivity.this, HoaDonChiTietActivity.class);
                     Bundle b = new Bundle();
                     b.putString("MAHOADON", edMaHoaDon.getText().toString());
                     intent.putExtras(b);

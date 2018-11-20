@@ -1,12 +1,12 @@
 package com.example.admin.qlks.model;
 
-public class BillDetail {
+public class HoaDonChiTiet {
     private int maHDCT;
-    private Bill bill;
-    private Room room;
+    private HoaDon hoaDon;
+    private Sach sach;
     private int soLuongMua;
 
-    public BillDetail() {
+    public HoaDonChiTiet() {
 
     }
 
@@ -18,20 +18,20 @@ public class BillDetail {
         this.maHDCT = maHDCT;
     }
 
-    public Bill getBill() {
-        return bill;
+    public HoaDon getHoaDon() {
+        return hoaDon;
     }
 
-    public void setBill(Bill bill) {
-        this.bill = bill;
+    public void setHoaDon(HoaDon hoaDon) {
+        this.hoaDon = hoaDon;
     }
 
-    public Room getRoom() {
-        return room;
+    public Sach getSach() {
+        return sach;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setSach(Sach sach) {
+        this.sach = sach;
     }
 
     public int getSoLuongMua() {
@@ -42,11 +42,11 @@ public class BillDetail {
         this.soLuongMua = soLuongMua;
     }
 
-    public BillDetail(int maHDCT, Bill bill, Room room, int soLuongMua) {
+    public HoaDonChiTiet(int maHDCT, HoaDon hoaDon, Sach sach, int soLuongMua) {
 
         this.maHDCT = maHDCT;
-        this.bill = bill;
-        this.room = room;
+        this.hoaDon = hoaDon;
+        this.sach = sach;
         this.soLuongMua = soLuongMua;
     }
 }

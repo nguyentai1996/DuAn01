@@ -7,33 +7,33 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 
-import com.example.admin.qlks.model.Bill;
-import com.example.admin.qlks.model.BillDetail;
-import com.example.admin.qlks.model.Room;
+import com.example.admin.qlks.model.HoaDon;
+import com.example.admin.qlks.model.HoaDonChiTiet;
+import com.example.admin.qlks.model.Sach;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BillDetailDAO {
+public class HoaDonChiTietDAO {
     private SQLiteDatabase db;
     private Databasemanager dbHelper;
-    public static final String TABLE_NAME = "BillDetail";
-    public static final String SQL_HOA_DON_CHI_TIET = "CREATE TABLE BillDetail (maHDCT INTEGER PRIMARY KEY AUTOINCREMENT, " +
+    public static final String TABLE_NAME = "HoaDonChiTiet";
+    public static final String SQL_HOA_DON_CHI_TIET = "CREATE TABLE HoaDonChiTiet (maHDCT INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "maHoaDon text NOT NULL, maSach text NOT NULL, soLuong INTEGER);";
-    public static final String TAG = "BillDetail";
+    public static final String TAG = "HoaDonChiTiet";
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-    public BillDetailDAO(Context context) {
+    public HoaDonChiTietDAO(Context context) {
         dbHelper = new Databasemanager(context);
         db = dbHelper.getWritableDatabase();
     }
 
     //insert
-    public int inserHoaDonChiTiet(BillDetail hd) {
+    public int inserHoaDonChiTiet(HoaDonChiTiet hd) {
         ContentValues values = new ContentValues();
-        values.put("mahoadon", hd.getBill().getMaHoaDon());
-        values.put("maSach", hd.getRoom().getMaSach());
+        values.put("mahoadon", hd.getHoaDon().getMaHoaDon());
+        values.put("maSach", hd.getSach().getMaSach());
         values.put("soLuong", hd.getSoLuongMua());
         try {
             if (db.insert(TABLE_NAME, null, values) == -1) {
@@ -46,8 +46,8 @@ public class BillDetailDAO {
     }
 
     //getAll
-    public List<BillDetail> getAllHoaDonChiTiet() {
-        List<BillDetail> dsBillDetail = new ArrayList<>();
+    public List<HoaDonChiTiet> getAllHoaDonChiTiet() {
+        List<HoaDonChiTiet> dsHoaDonChiTiet = new ArrayList<>();
         String sSQL = "SELECT maHDCT, HoaDon.maHoaDon,HoaDon.ngayMua, " + "Sach.maSach, Sach.maTheLoai, Sach.tenSach, Sach.tacGia, Sach.NXB, Sach.giaBia, " +
                 "Sach.soLuong,HoaDonChiTiet.soLuong FROM HoaDonChiTiet INNER JOIN HoaDon " +
                 "on HoaDonChiTiet.maHoaDon = HoaDon.maHoaDon INNER JOIN Sach on Sach.maSach = HoaDonChiTiet.maSach";
@@ -55,12 +55,12 @@ public class BillDetailDAO {
         c.moveToFirst();
         try {
             while (c.isAfterLast() == false) {
-                BillDetail ee = new BillDetail();
+                HoaDonChiTiet ee = new HoaDonChiTiet();
                 ee.setMaHDCT(c.getInt(0));
-                ee.setBill(new Bill(c.getString(1), sdf.parse(c.getString(2))));
-                ee.setRoom(new Room(c.getString(3), c.getString(4), c.getString(5), c.getString(6), c.getString(7), c.getInt(8), c.getInt(9)));
+                ee.setHoaDon(new HoaDon(c.getString(1), sdf.parse(c.getString(2))));
+                ee.setSach(new Sach(c.getString(3), c.getString(4), c.getString(5), c.getInt(8)));
                 ee.setSoLuongMua(c.getInt(10));
-                dsBillDetail.add(ee);
+                dsHoaDonChiTiet.add(ee);
                 Log.d("//=====", ee.toString());
                 c.moveToNext();
             }
@@ -68,12 +68,12 @@ public class BillDetailDAO {
         } catch (Exception e) {
             Log.d(TAG, e.toString());
         }
-        return dsBillDetail;
+        return dsHoaDonChiTiet;
     }
 
     //getAll
-    public List<BillDetail> getAllHoaDonChiTietByID(String maHoaDon) {
-        List<BillDetail> dsBillDetail = new ArrayList<>();
+    public List<HoaDonChiTiet> getAllHoaDonChiTietByID(String maHoaDon) {
+        List<HoaDonChiTiet> dsHoaDonChiTiet = new ArrayList<>();
         String sSQL = "SELECT maHDCT, HoaDon.maHoaDon,HoaDon.ngayMua, " +
                 "Sach.maSach, Sach.maTheLoai, Sach.tenSach, Sach.tacGia, Sach.NXB, Sach.giaBia, " +
                 "Sach.soLuong,HoaDonChiTiet.soLuong FROM HoaDonChiTiet INNER JOIN HoaDon " +
@@ -82,13 +82,13 @@ public class BillDetailDAO {
         c.moveToFirst();
         try {
             while (c.isAfterLast() == false) {
-                BillDetail ee = new BillDetail();
+                HoaDonChiTiet ee = new HoaDonChiTiet();
                 ee.setMaHDCT(c.getInt(0));
-                ee.setBill(new Bill(c.getString(1), sdf.parse(c.getString(2))));
-                ee.setRoom(new
-                        Room(c.getString(3), c.getString(4), c.getString(5), c.getString(6), c.getString(7), c.getInt(8), c.getInt(9)));
+                ee.setHoaDon(new HoaDon(c.getString(1), sdf.parse(c.getString(2))));
+                ee.setSach(new
+                        Sach(c.getString(3), c.getString(4), c.getString(5), c.getInt(8)));
                 ee.setSoLuongMua(c.getInt(10));
-                dsBillDetail.add(ee);
+                dsHoaDonChiTiet.add(ee);
                 Log.d("//=====", ee.toString());
                 c.moveToNext();
             }
@@ -96,15 +96,15 @@ public class BillDetailDAO {
         } catch (Exception e) {
             Log.d(TAG, e.toString());
         }
-        return dsBillDetail;
+        return dsHoaDonChiTiet;
     }
 
     //update
-    public int updateHoaDonChiTiet(BillDetail hd) {
+    public int updateHoaDonChiTiet(HoaDonChiTiet hd) {
         ContentValues values = new ContentValues();
         values.put("maHDCT", hd.getMaHDCT());
-        values.put("mahoadon", hd.getBill().getMaHoaDon());
-        values.put("maSach", hd.getRoom().getMaSach());
+        values.put("mahoadon", hd.getHoaDon().getMaHoaDon());
+        values.put("maSach", hd.getSach().getMaSach());
         values.put("soLuong", hd.getSoLuongMua());
         int result = db.update(TABLE_NAME, values, "maHDCT=?", new
                 String[]{String.valueOf(hd.getMaHDCT())});

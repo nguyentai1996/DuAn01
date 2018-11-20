@@ -15,21 +15,18 @@ public class Databasemanager extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(UserDAO.SQL_USER);
-        db.execSQL(TypeDAO.SQL_THE_LOAI);
         db.execSQL(RoomDAO.SQL_SACH);
-        db.execSQL(BillDAO.SQL_HOA_DON);
-        db.execSQL(BillDetailDAO.SQL_HOA_DON_CHI_TIET);
-
+        db.execSQL(HoaDonDAO.SQL_HOA_DON);
+        db.execSQL(HoaDonChiTietDAO.SQL_HOA_DON_CHI_TIET);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("Drop table if exists " + UserDAO.TABLE_NAME);
-        db.execSQL("Drop table if exists " + TypeDAO.TABLE_NAME);
-        db.execSQL("Drop table if exists " + RoomDAO.TABLE_NAME);
-        db.execSQL("Drop table if exists " + BillDAO.TABLE_NAME);
-        db.execSQL("Drop table if exists " + BillDetailDAO.TABLE_NAME);
 
+        db.execSQL("Drop table if exists " + RoomDAO.TABLE_NAME);
+        db.execSQL("Drop table if exists " + HoaDonDAO.TABLE_NAME);
+        db.execSQL("Drop table if exists " + HoaDonChiTietDAO.TABLE_NAME);
         onCreate(db);
     }
 }

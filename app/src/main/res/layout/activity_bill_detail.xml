@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".billdetail.BillDetailActivity">
+    tools:context=".billdetail.HoaDonChiTietActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -23,6 +23,7 @@
                 android:layout_width="35dp"
                 android:layout_height="match_parent"
                 android:id="@+id/exit"
+                android:onClick="exit"
                 android:src="@drawable/exit" /> />
 
             <TextView
@@ -47,7 +48,7 @@
         android:id="@+id/edMaSach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mã sách" />
+        android:hint="Số Phòng" />
 
     <EditText
         android:id="@+id/edSoLuongMua"

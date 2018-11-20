@@ -13,44 +13,44 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.admin.qlks.model.Bill;
 import com.example.admin.qlks.R;
-import com.example.admin.qlks.database.BillDAO;
-import com.example.admin.qlks.database.BillDetailDAO;
+import com.example.admin.qlks.database.HoaDonChiTietDAO;
+import com.example.admin.qlks.database.HoaDonDAO;
+import com.example.admin.qlks.model.HoaDon;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BillAdapter extends BaseAdapter implements Filterable {
-    List<Bill> arrBill;
-    List<Bill> arrSortBill;
+public class HoaDonAdapter extends BaseAdapter implements Filterable {
+    List<HoaDon> arrHoaDon;
+    List<HoaDon> arrSortHoaDon;
     private Filter hoaDonFilter;
     public Activity context;
     public LayoutInflater inflater;
-    BillDAO hoadonDAO;
-    BillDetailDAO billDetailDAO;
+    HoaDonDAO hoadonDAO;
+    HoaDonChiTietDAO hoaDonChiTietDAO;
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-    public BillAdapter(Activity context, List<Bill> arrayBill) {
+    public HoaDonAdapter(Activity context, List<HoaDon> arrayHoaDon) {
         super();
         this.context = context;
-        this.arrBill = arrayBill;
-        this.arrSortBill = arrayBill;
+        this.arrHoaDon = arrayHoaDon;
+        this.arrSortHoaDon = arrayHoaDon;
         this.inflater =
                 (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        hoadonDAO = new BillDAO(context);
-        billDetailDAO = new BillDetailDAO(context);
+        hoadonDAO = new HoaDonDAO(context);
+        hoaDonChiTietDAO = new HoaDonChiTietDAO(context);
     }
 
     @Override
     public int getCount() {
-        return arrBill.size();
+        return arrHoaDon.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return arrBill.get(position);
+        return arrHoaDon.get(position);
     }
 
     @Override
@@ -79,12 +79,12 @@ public class BillAdapter extends BaseAdapter implements Filterable {
                 @Override
                 public void onClick(View v) {
                     if
-                            (billDetailDAO.checkHoaDon(arrBill.get(position).getMaHoaDon())) {
+                            (hoaDonChiTietDAO.checkHoaDon(arrHoaDon.get(position).getMaHoaDon())) {
                         Toast.makeText(context, "Bạn phải xoá hoá đơn chi tiết trước khi xoá hoá đơn này", Toast.LENGTH_LONG).show();
                     } else {
 
-                        hoadonDAO.deleteHoaDonByID(arrBill.get(position).getMaHoaDon());
-                        arrBill.remove(position);
+                        hoadonDAO.deleteHoaDonByID(arrHoaDon.get(position).getMaHoaDon());
+                        arrHoaDon.remove(position);
                         notifyDataSetChanged();
                     }
                 }
@@ -92,7 +92,7 @@ public class BillAdapter extends BaseAdapter implements Filterable {
             convertView.setTag(holder);
         } else
             holder = (ViewHolder) convertView.getTag();
-        Bill _entry = (Bill) arrBill.get(position);
+        HoaDon _entry = (HoaDon) arrHoaDon.get(position);
         holder.txtMaHoaDon.setText(_entry.getMaHoaDon());
         holder.txtNgayMua.setText(sdf.format(_entry.getNgayMua()));
         return convertView;
@@ -103,13 +103,13 @@ public class BillAdapter extends BaseAdapter implements Filterable {
         super.notifyDataSetChanged();
     }
 
-    public void changeDataset(List<Bill> items) {
-        this.arrBill = items;
+    public void changeDataset(List<HoaDon> items) {
+        this.arrHoaDon = items;
         notifyDataSetChanged();
     }
 
     public void resetData() {
-        arrBill = arrSortBill;
+        arrHoaDon = arrSortHoaDon;
     }
 
     public Filter getFilter() {
@@ -123,17 +123,17 @@ public class BillAdapter extends BaseAdapter implements Filterable {
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults results = new FilterResults();
             if (constraint == null || constraint.length() == 0) {
-                results.values = arrSortBill;
-                results.count = arrSortBill.size();
+                results.values = arrSortHoaDon;
+                results.count = arrSortHoaDon.size();
             } else {
-                List<Bill> lsBill = new ArrayList<Bill>();
-                for (Bill p : arrBill) {
+                List<HoaDon> lsHoaDon = new ArrayList<HoaDon>();
+                for (HoaDon p : arrHoaDon) {
                     if
                             (p.getMaHoaDon().toUpperCase().startsWith(constraint.toString().toUpperCase()))
-                        lsBill.add(p);
+                        lsHoaDon.add(p);
                 }
-                results.values = lsBill;
-                results.count = lsBill.size();
+                results.values = lsHoaDon;
+                results.count = lsHoaDon.size();
             }
             return results;
         }
@@ -145,7 +145,7 @@ public class BillAdapter extends BaseAdapter implements Filterable {
             if (results.count == 0)
                 notifyDataSetInvalidated();
             else {
-                arrBill = (List<Bill>) results.values;
+                arrHoaDon = (List<HoaDon>) results.values;
                 notifyDataSetChanged();
             }
         }

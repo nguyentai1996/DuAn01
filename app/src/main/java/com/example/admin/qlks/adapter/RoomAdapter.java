@@ -16,27 +16,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.example.admin.qlks.model.Room;
 import com.example.admin.qlks.R;
 import com.example.admin.qlks.room.AddRoomActivity;
 import com.example.admin.qlks.database.RoomDAO;
+import com.example.admin.qlks.model.Sach;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RoomAdapter extends BaseAdapter implements Filterable {
-    List<Room> arrRooms;
-    List<Room> arrSortRooms;
+    List<Sach> arrSaches;
+    List<Sach> arrSortSaches;
     private Filter sachFilter;
     public Activity context;
     public LayoutInflater inflater;
     RoomDAO roomDAO;
 
-    public RoomAdapter(Activity context, List<Room> arrayRooms) {
+    public RoomAdapter(Activity context, List<Sach> arraySaches) {
         super();
         this.context = context;
-        this.arrRooms = arrayRooms;
-        this.arrSortRooms = arrayRooms;
+        this.arrSaches = arraySaches;
+        this.arrSortSaches = arraySaches;
         this.inflater =
                 (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         roomDAO = new RoomDAO(context);
@@ -44,12 +44,12 @@ public class RoomAdapter extends BaseAdapter implements Filterable {
 
     @Override
     public int getCount() {
-        return arrRooms.size();
+        return arrSaches.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return arrRooms.get(position);
+        return arrSaches.get(position);
     }
 
     @Override
@@ -60,7 +60,9 @@ public class RoomAdapter extends BaseAdapter implements Filterable {
     public static class ViewHolder {
         ImageView img;
         TextView txtBookCode;
-        TextView txtSoLuong;
+        TextView txtPrice;
+        TextView txtStt;
+        TextView txtLoai;
         ImageView imgEdit, imgDelete;
     }
 
@@ -72,20 +74,24 @@ public class RoomAdapter extends BaseAdapter implements Filterable {
             convertView = inflater.inflate(R.layout.item_book, null);
             holder.img = (ImageView) convertView.findViewById(R.id.ivIcon);
             holder.txtBookCode = (TextView) convertView.findViewById(R.id.tvMa);
-            holder.txtSoLuong = (TextView) convertView.findViewById(R.id.tvSoLuong);
+            holder.txtLoai = (TextView) convertView.findViewById(R.id.tvLoai);
+            holder.txtStt = (TextView) convertView.findViewById(R.id.tvStt);
+            holder.txtPrice = (TextView) convertView.findViewById(R.id.tvSoLuong);
+
+
             holder.imgEdit = convertView.findViewById(R.id.ivEdit);
             holder.imgEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, AddRoomActivity.class);
                     Bundle b = new Bundle();
-                    b.putString("MASACH", arrRooms.get(position).getMaSach());
-                    b.putString("MATHELOAI", arrRooms.get(position).getMaTheLoai());
-                    b.putString("TENSACH", arrRooms.get(position).getTenSach());
-                    b.putString("TACGIA", arrRooms.get(position).getTacGia());
-                    b.putString("NXB", arrRooms.get(position).getNXB());
-                    b.putString("GIABIA", String.valueOf(arrRooms.get(position).getGiaBia()));
-                    b.putString("SOLUONG", String.valueOf(arrRooms.get(position).getSoLuong()));
+                    b.putString("MASACH", arrSaches.get(position).getMaSach());
+
+                    b.putString("TENSACH", arrSaches.get(position).getMaTheLoai());
+                    b.putString("TACGIA", arrSaches.get(position).getTenSach());
+
+                    b.putString("GIABIA", String.valueOf(arrSaches.get(position).getGiaBia()));
+
                     intent.putExtras(b);
                     context.startActivity(intent);
                 }
@@ -100,8 +106,8 @@ public class RoomAdapter extends BaseAdapter implements Filterable {
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            roomDAO.deleteSachByID(arrRooms.get(position).getMaSach());
-                            arrRooms.remove(position);
+                            roomDAO.deleteSachByID(arrSaches.get(position).getMaSach());
+                            arrSaches.remove(position);
                             notifyDataSetChanged();
                         }
                     });
@@ -116,9 +122,12 @@ public class RoomAdapter extends BaseAdapter implements Filterable {
             convertView.setTag(holder);
         } else
             holder = (ViewHolder) convertView.getTag();
-        Room _entry = (Room) arrRooms.get(position);
-        holder.txtBookCode.setText("Mã sách: " + _entry.getMaSach());
-        holder.txtSoLuong.setText("Số lượng: " + _entry.getSoLuong());
+        Sach _entry = (Sach) arrSaches.get(position);
+        holder.txtBookCode.setText("Số Phòng: " + _entry.getMaSach());
+        holder.txtLoai.setText("Loại Phòng: " + _entry.getMaTheLoai());
+        holder.txtStt.setText("Trạng Thái: " + _entry.getTenSach());
+        holder.txtPrice.setText("Giá: " + _entry.getGiaBia());
+
         return convertView;
     }
 
@@ -127,13 +136,13 @@ public class RoomAdapter extends BaseAdapter implements Filterable {
         super.notifyDataSetChanged();
     }
 
-    public void changeDatasetBook(List<Room> items) {
-        this.arrRooms = items;
+    public void changeDatasetBook(List<Sach> items) {
+        this.arrSaches = items;
         notifyDataSetChanged();
     }
 
     public void resetData() {
-        arrRooms = arrSortRooms;
+        arrSaches = arrSortSaches;
     }
 
     public Filter getFilter() {
@@ -148,17 +157,17 @@ public class RoomAdapter extends BaseAdapter implements Filterable {
             FilterResults results = new FilterResults();
             // We implement here the filter logic
             if (constraint == null || constraint.length() == 0) {
-                results.values = arrSortRooms;
-                results.count = arrSortRooms.size();
+                results.values = arrSortSaches;
+                results.count = arrSortSaches.size();
             } else {
-                List<Room> lsRooms = new ArrayList<Room>();
-                for (Room p : arrRooms) {
+                List<Sach> lsSaches = new ArrayList<Sach>();
+                for (Sach p : arrSaches) {
                     if
                             (p.getMaSach().toUpperCase().startsWith(constraint.toString().toUpperCase()))
-                        lsRooms.add(p);
+                        lsSaches.add(p);
                 }
-                results.values = lsRooms;
-                results.count = lsRooms.size();
+                results.values = lsSaches;
+                results.count = lsSaches.size();
             }
             return results;
         }
@@ -169,7 +178,7 @@ public class RoomAdapter extends BaseAdapter implements Filterable {
             if (results.count == 0)
                 notifyDataSetInvalidated();
             else {
-                arrRooms = (List<Room>) results.values;
+                arrSaches = (List<Sach>) results.values;
                 notifyDataSetChanged();
             }
         }

@@ -10,35 +10,35 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.example.admin.qlks.model.BillDetail;
 import com.example.admin.qlks.R;
-import com.example.admin.qlks.database.BillDetailDAO;
+import com.example.admin.qlks.database.HoaDonChiTietDAO;
+import com.example.admin.qlks.model.HoaDonChiTiet;
 
 import java.util.List;
 
 public class CartAdapter extends BaseAdapter {
-    List<BillDetail> arrBillDetail;
+    List<HoaDonChiTiet> arrHoaDonChiTiet;
     public Activity context;
     public LayoutInflater inflater;
-    BillDetailDAO billDetailDAO;
+    HoaDonChiTietDAO hoaDonChiTietDAO;
 
-    public CartAdapter(Activity context, List<BillDetail> arrayBillDetail) {
+    public CartAdapter(Activity context, List<HoaDonChiTiet> arrayHoaDonChiTiet) {
         super();
         this.context = context;
-        this.arrBillDetail = arrayBillDetail;
+        this.arrHoaDonChiTiet = arrayHoaDonChiTiet;
         this.inflater =
                 (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        billDetailDAO = new BillDetailDAO(context);
+        hoaDonChiTietDAO = new HoaDonChiTietDAO(context);
     }
 
     @Override
     public int getCount() {
-        return arrBillDetail.size();
+        return arrHoaDonChiTiet.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return arrBillDetail.get(position);
+        return arrHoaDonChiTiet.get(position);
     }
 
     @Override
@@ -70,19 +70,19 @@ public class CartAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
 
-                    billDetailDAO.deleteHoaDonChiTietByID(String.valueOf(arrBillDetail.get(position).getMaHDCT()));
-                    arrBillDetail.remove(position);
+                    hoaDonChiTietDAO.deleteHoaDonChiTietByID(String.valueOf(arrHoaDonChiTiet.get(position).getMaHDCT()));
+                    arrHoaDonChiTiet.remove(position);
                     notifyDataSetChanged();
                 }
             });
             convertView.setTag(holder);
         } else
             holder = (ViewHolder) convertView.getTag();
-        BillDetail _entry = (BillDetail) arrBillDetail.get(position);
-        holder.txtMaSach.setText("Mã sách: " + _entry.getRoom().getMaSach());
+        HoaDonChiTiet _entry = (HoaDonChiTiet) arrHoaDonChiTiet.get(position);
+        holder.txtMaSach.setText("Mã sách: " + _entry.getSach().getMaSach());
         holder.txtSoLuong.setText("Số lượng: " + _entry.getSoLuongMua());
-        holder.txtGiaBia.setText("Giá bìa: " + _entry.getRoom().getGiaBia() + " vnd");
-        holder.txtThanhTien.setText("Thành tiền: " + _entry.getSoLuongMua() * _entry.getRoom().getGiaBia() + " vnd");
+        holder.txtGiaBia.setText("Giá bìa: " + _entry.getSach().getGiaBia() + " vnd");
+        holder.txtThanhTien.setText("Thành tiền: " + _entry.getSoLuongMua() * _entry.getSach().getGiaBia() + " vnd");
         return convertView;
     }
 
@@ -91,8 +91,8 @@ public class CartAdapter extends BaseAdapter {
         super.notifyDataSetChanged();
     }
 
-    public void changeDatasetHDCT(List<BillDetail> items) {
-        this.arrBillDetail = items;
+    public void changeDatasetHDCT(List<HoaDonChiTiet> items) {
+        this.arrHoaDonChiTiet = items;
         notifyDataSetChanged();
     }
 }

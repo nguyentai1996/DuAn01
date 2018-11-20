@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 
-import com.example.admin.qlks.model.Room;
+import com.example.admin.qlks.model.Sach;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +15,8 @@ import java.util.List;
 public class RoomDAO {
     private static SQLiteDatabase db;
     private Databasemanager dbHelper;
-    public static final String TABLE_NAME = "Room";
-    public static final String SQL_SACH = "CREATE TABLE Room (maSach text primary key, maTheLoai text, tensach text," + "tacGia text, NXB text, giaBia double, soLuong number);";
+    public static final String TABLE_NAME = "Sach";
+    public static final String SQL_SACH = "CREATE TABLE Sach (maSach text primary key, maTheLoai text, tensach text," + "tacGia text, NXB text, giaBia double, soLuong number);";
     public static final String TAG = "RoomDAO";
 
     public RoomDAO(Context context) {
@@ -25,7 +25,7 @@ public class RoomDAO {
     }
 
     //insert
-    public int inserSach(Room s) {
+    public int inserSach(Sach s) {
         ContentValues values = new ContentValues();
         values.put("maSach", s.getMaSach());
         values.put("maTheLoai", s.getMaTheLoai());
@@ -53,12 +53,12 @@ public class RoomDAO {
     }
 
     //getAll
-    public static List<Room> getAllSach() {
-            List<Room> dsRooms = new ArrayList<>();
+    public static List<Sach> getAllSach() {
+            List<Sach> dsSaches = new ArrayList<>();
         Cursor c = db.query(TABLE_NAME, null, null, null, null, null, null);
         c.moveToFirst();
         while (c.isAfterLast() == false) {
-            Room s = new Room();
+            Sach s = new Sach();
             s.setMaSach(c.getString(0));
             s.setMaTheLoai(c.getString(1));
             s.setTenSach(c.getString(2));
@@ -66,16 +66,16 @@ public class RoomDAO {
             s.setNXB(c.getString(4));
             s.setGiaBia(c.getDouble(5));
             s.setSoLuong(c.getInt(6));
-            dsRooms.add(s);
+            dsSaches.add(s);
             Log.d("//=====", s.toString());
             c.moveToNext();
         }
         c.close();
-        return dsRooms;
+        return dsSaches;
     }
 
     //update
-    public int updateSach(Room s) {
+    public int updateSach(Sach s) {
         ContentValues values = new ContentValues();
         values.put("maSach", s.getMaSach());
         values.put("maTheLoai", s.getMaTheLoai());
@@ -126,8 +126,8 @@ public class RoomDAO {
     }
 
     //check
-    public Room checkBook(String strPrimaryKey) {
-        Room s = new Room();
+    public Sach checkBook(String strPrimaryKey) {
+        Sach s = new Sach();
         //SELECT
         String[] columns = {"masach"};
         //WHERE clause
@@ -159,8 +159,8 @@ public class RoomDAO {
     }
 
     //getAll
-    public Room getSachByID(String maSach) {
-        Room s = null;
+    public Sach getSachByID(String maSach) {
+        Sach s = null;
         //WHERE clause
         String selection = "masach=?";
         //WHERE clause arguments
@@ -169,7 +169,7 @@ public class RoomDAO {
         Log.d("getSachByID", "===>" + c.getCount());
         c.moveToFirst();
         while (c.isAfterLast() == false) {
-            s = new Room();
+            s = new Sach();
             s.setMaSach(c.getString(0));
             s.setMaTheLoai(c.getString(1));
             s.setTenSach(c.getString(2));
@@ -184,8 +184,8 @@ public class RoomDAO {
     }
 
     //getAll
-    public List<Room> getSachTop10(String month) {
-        List<Room> dsRooms = new ArrayList<>();
+    public List<Sach> getSachTop10(String month) {
+        List<Sach> dsSaches = new ArrayList<>();
         if (Integer.parseInt(month) < 10) {
             month = "0" + month;
         }
@@ -196,7 +196,7 @@ public class RoomDAO {
         c.moveToFirst();
         while (c.isAfterLast() == false) {
             Log.d("//=====", c.getString(0));
-            Room s = new Room();
+            Sach s = new Sach();
             s.setMaSach(c.getString(0));
             s.setSoLuong(c.getInt(1));
             s.setGiaBia(0);
@@ -204,10 +204,10 @@ public class RoomDAO {
             s.setTenSach("");
             s.setTacGia("");
             s.setNXB("");
-            dsRooms.add(s);
+            dsSaches.add(s);
             c.moveToNext();
         }
         c.close();
-        return dsRooms;
+        return dsSaches;
     }
 }

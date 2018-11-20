@@ -13,17 +13,17 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 
-import com.example.admin.qlks.model.Room;
 import com.example.admin.qlks.R;
 import com.example.admin.qlks.adapter.RoomAdapter;
 import com.example.admin.qlks.database.RoomDAO;
+import com.example.admin.qlks.model.Sach;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListRoomActivity extends AppCompatActivity {
-    public static List<Room> dsRooms = new ArrayList<>();
-//    public static List<Room> dsRooms = new ArrayList<>();
+    public static List<Sach> dsSaches = new ArrayList<>();
+//    public static List<Sach> dsSaches = new ArrayList<>();
     ListView lvBook;
     RoomAdapter adapter = null;
     RoomDAO roomDAO;
@@ -34,17 +34,11 @@ public class ListRoomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_room);
+        setContentView(R.layout.activity_list_book);
         lvBook = (ListView) findViewById(R.id.lvBook);
-        toolbar=findViewById(R.id.toolbarbook);
+        toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        imageView=findViewById(R.id.outbook);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
         floatingActionButton=findViewById(R.id.floatAddSach);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +47,8 @@ public class ListRoomActivity extends AppCompatActivity {
             }
         });
         roomDAO = new RoomDAO(ListRoomActivity.this);
-        dsRooms = roomDAO.getAllSach();
-        adapter = new RoomAdapter(this, dsRooms);
+        dsSaches = roomDAO.getAllSach();
+        adapter = new RoomAdapter(this, dsSaches);
 ;
         lvBook.setAdapter(adapter);
 
@@ -85,8 +79,15 @@ public class ListRoomActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        dsRooms.clear();
-        dsRooms = RoomDAO.getAllSach();
-        adapter.changeDatasetBook(dsRooms);
+        dsSaches.clear();
+        dsSaches = RoomDAO.getAllSach();
+        adapter.changeDatasetBook(dsSaches);
+    }
+
+    public void addBook(View view) {
+    }
+
+    public void exit(View view) {
+        finish();
     }
 }

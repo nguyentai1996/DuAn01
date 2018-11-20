@@ -6,15 +6,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="128dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="5dp">
 
         <ImageView
             android:id="@+id/img"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
+            android:layout_width="128dp"
+            android:layout_height="144dp"
             android:layout_weight="2"
             android:src="@drawable/hotel" />
 
@@ -34,12 +34,34 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
+
+            <TextView
+                android:id="@+id/tvLoai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="Loại"
+                android:textAllCaps="true"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tvStt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="Trạng Thái"
+
+                android:textAllCaps="true"
+                android:textSize="10dp" />
+
             <TextView
                 android:id="@+id/tvSoLuong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="Quantity" />
+                android:text="Price"
+                android:textAllCaps="true"
+                android:textSize="10dp" />
         </LinearLayout>
 
         <ImageView
