@@ -19,6 +19,7 @@ import com.example.admin.qlks.database.RoomDAO;
 import com.example.admin.qlks.model.HoaDon;
 import com.example.admin.qlks.model.HoaDonChiTiet;
 import com.example.admin.qlks.model.Sach;
+import com.example.admin.qlks.toproom.RevenueStatisticsActivity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -100,6 +101,8 @@ public class HoaDonChiTietActivity extends AppCompatActivity {
         } catch (Exception ex) {
             Log.e("Error", ex.toString());
         }
+        Intent intent = new Intent(this,RevenueStatisticsActivity.class);
+        startActivity(intent);
     }
 
     public int checkMaSach(List<HoaDonChiTiet> lsHD, String maSach) {
