@@ -55,7 +55,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Loại Phòng" />
-
+<!--<Spinner-->
+    <!--android:id="@+id/spn"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"></Spinner>-->
     <EditText
         android:id="@+id/edTacGia"
         android:layout_width="match_parent"

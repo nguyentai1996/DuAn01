@@ -23,7 +23,7 @@ import java.util.List;
 
 public class ListRoomActivity extends AppCompatActivity {
     public static List<Sach> dsSaches = new ArrayList<>();
-//    public static List<Sach> dsSaches = new ArrayList<>();
+//    public statistical List<Sach> dsSaches = new ArrayList<>();
     ListView lvBook;
     RoomAdapter adapter = null;
     RoomDAO roomDAO;

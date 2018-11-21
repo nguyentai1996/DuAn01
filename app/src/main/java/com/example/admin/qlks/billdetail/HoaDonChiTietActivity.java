@@ -101,8 +101,7 @@ public class HoaDonChiTietActivity extends AppCompatActivity {
         } catch (Exception ex) {
             Log.e("Error", ex.toString());
         }
-        Intent intent = new Intent(this,RevenueStatisticsActivity.class);
-        startActivity(intent);
+
     }
 
     public int checkMaSach(List<HoaDonChiTiet> lsHD, String maSach) {

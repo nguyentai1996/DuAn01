@@ -44,4 +44,13 @@ public class MainActivity extends AppCompatActivity {
     public void user(View view) {
         startActivity(new Intent(getApplicationContext(), UserActivity.class));
     }
+
+    public void location(View view) {
+        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+    }
+
+    public void thongke(View view) {
+        Intent intent = new Intent(this,RevenueStatisticsActivity.class);
+        startActivity(intent);
+    }
 }
