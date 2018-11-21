@@ -45,11 +45,9 @@
             android:name=".room.ListRoomActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".sach.AddRoomActivity"
+            android:name=".MainMainActivity"
             android:theme="@style/AppThemeNoActionBar" />
-        <activity
-            android:name=".sach.ListRoomActivity"
-            android:theme="@style/AppThemeNoActionBar" />
+
         <activity
             android:name=".toproom.RevenueStatisticsActivity"
             android:theme="@style/AppThemeNoActionBar" />

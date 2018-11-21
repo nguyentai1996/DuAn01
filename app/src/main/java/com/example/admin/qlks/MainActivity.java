@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void viewthongke(View view) {
-        startActivity(new Intent(getApplicationContext(), RevenueStatisticsActivity.class));
+        startActivity(new Intent(getApplicationContext(), MainMainActivity.class));
     }
 
     public void user(View view) {
