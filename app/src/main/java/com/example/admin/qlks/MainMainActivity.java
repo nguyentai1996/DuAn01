@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.admin.qlks.database.HoaDonChiTietDAO;
 
-
+import com.example.admin.qlks.database.HoaDonChiTietDAO;
 import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
@@ -26,9 +27,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainMainActivity extends AppCompatActivity implements OnChartValueSelectedListener{
+public class MainMainActivity extends AppCompatActivity implements OnChartValueSelectedListener {
 
+    static HoaDonChiTietDAO hoaDonChiTietDAO;
     private CombinedChart mChart;
+    private ArrayList<String> PieEntryLabels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,12 +94,7 @@ public class MainMainActivity extends AppCompatActivity implements OnChartValueS
 
     @Override
     public void onValueSelected(Entry e, Highlight h) {
-        Toast.makeText(this, "Value: "
-                + e.getY()
-                + ", index: "
-                + h.getX()
-                + ", DataSet index: "
-                + h.getDataSetIndex(), Toast.LENGTH_SHORT).show();
+
     }
 
 
@@ -105,18 +103,33 @@ public class MainMainActivity extends AppCompatActivity implements OnChartValueS
 
     }
 
-    private static DataSet dataChart() {
+    private DataSet dataChart() {
+        hoaDonChiTietDAO = new HoaDonChiTietDAO(this);
 
         LineData d = new LineData();
-        int[] data = new int[] { 1, 2, 2, 1, 1, 1, 2, 1, 1, 2, 1, 9 };
 
-        ArrayList<Entry> entries = new ArrayList<Entry>();
 
-        for (int index = 0; index < 12; index++) {
-            entries.add(new Entry(index, data[index]));
-        }
 
-        LineDataSet set = new LineDataSet(entries, "Request Ots approved");
+
+
+    ArrayList<Entry> entries = new ArrayList<Entry>();
+
+
+        entries.add(new Entry(0, (float) hoaDonChiTietDAO.getDoanhThuThang1()));
+        entries.add(new Entry(1, (float) hoaDonChiTietDAO.getDoanhThuThangHai()));
+        entries.add(new Entry(2,(float) hoaDonChiTietDAO.getDoanhThuThangBa()));
+        entries.add(new Entry(3,(float) hoaDonChiTietDAO.getDoanhThuThangTu() ));
+        entries.add(new Entry(4,(float) hoaDonChiTietDAO.getDoanhThuThangNam()));
+        entries.add(new Entry(5,(float) hoaDonChiTietDAO.getDoanhThuThangSau()));
+        entries.add(new Entry(6,(float) hoaDonChiTietDAO.getDoanhThuThangBay()));
+        entries.add(new Entry(7,(float) hoaDonChiTietDAO.getDoanhThuThangTam()));
+        entries.add(new Entry(8,(float) hoaDonChiTietDAO.getDoanhThuThang9()));
+        entries.add(new Entry(9,(float) hoaDonChiTietDAO.getDoanhThuThang10()));
+        entries.add(new Entry(10,(float) hoaDonChiTietDAO.getDoanhThuThang11()));
+        entries.add(new Entry(11,(float) hoaDonChiTietDAO.getDoanhThuThang12()));
+
+
+    LineDataSet set = new LineDataSet(entries, "Doanh số theo tháng");
         set.setColor(Color.GREEN);
         set.setLineWidth(2.5f);
         set.setCircleColor(Color.GREEN);
@@ -131,5 +144,5 @@ public class MainMainActivity extends AppCompatActivity implements OnChartValueS
         d.addDataSet(set);
 
         return set;
-    }
+}
 }

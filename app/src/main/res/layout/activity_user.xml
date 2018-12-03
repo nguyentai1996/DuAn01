@@ -31,7 +31,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="90dp"
                 android:gravity="center"
-                android:text="EDIT USER"
+                android:text="EMPLOYESS"
                 android:textColor="@color/colorr"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -40,7 +40,7 @@
                 android:onClick="them"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="85dp"
+                android:layout_marginLeft="75dp"
                 android:gravity="center"
                 android:text="ADD"
                 android:textColor="@color/colorr"

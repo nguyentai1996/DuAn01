@@ -151,7 +151,7 @@ public class HoaDonChiTietDAO {
         double doanhThu = 0;
         String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
                 "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
-                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where HoaDon.ngayMua = date('now') GROUP BY HoaDonChiTiet.maSach)tmp";
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where strftime('%d',HoaDon.ngayMua)= strftime('%d', 'now') GROUP BY HoaDonChiTiet.maSach)tmp";
         Cursor c = db.rawQuery(sSQL, null);
         c.moveToFirst();
         while (c.isAfterLast() == false) {
@@ -162,10 +162,12 @@ public class HoaDonChiTietDAO {
         return doanhThu;
     }
 
-    public double getDoanhThuTheoThang() {
+
+    public double getDoanhThuThang1() {
         double doanhThu = 0;
-        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " + "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
-                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where strftime('%m',HoaDon.ngayMua) = strftime('%m','now') GROUP BY HoaDonChiTiet.maSach)tmp";
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-11 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
         Cursor c = db.rawQuery(sSQL, null);
         c.moveToFirst();
         while (c.isAfterLast() == false) {
@@ -175,6 +177,179 @@ public class HoaDonChiTietDAO {
         c.close();
         return doanhThu;
     }
+
+    public double getDoanhThuThangHai() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-10 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+    public double getDoanhThuThangBa() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-9 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+    public double getDoanhThuThangTu() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-8 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+    public double getDoanhThuThangNam() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-7 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+
+    public double getDoanhThuThangSau() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-6 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+
+    public double getDoanhThuThangBay() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-5 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+
+    public double getDoanhThuThangTam() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-4 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+
+    public double getDoanhThuThang9() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-3 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+
+    public double getDoanhThuThang10() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-2 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+
+    public double getDoanhThuThang11() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now','-1 months')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
+
+    public double getDoanhThuThang12() {
+        double doanhThu = 0;
+        String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(Sach.giaBia * HoaDonChiTiet.soLuong) as 'tongtien' " +
+                "FROM HoaDon INNER JOIN HoaDonChiTiet on HoaDon.maHoaDon = HoaDonChiTiet.maHoaDon " +
+                "INNER JOIN Sach on HoaDonChiTiet.maSach = Sach.maSach where  strftime('%m',HoaDon.ngayMua) = strftime('%m','now')  GROUP BY HoaDonChiTiet.maSach)tmp";
+        Cursor c = db.rawQuery(sSQL, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            doanhThu = c.getDouble(0);
+            c.moveToNext();
+        }
+        c.close();
+        return doanhThu;
+    }
+
 
     public double getDoanhThuTheoNam() {
         double doanhThu = 0;

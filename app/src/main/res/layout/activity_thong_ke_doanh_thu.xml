@@ -6,73 +6,181 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".toproom.RevenueStatisticsActivity">
+
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_marginLeft="-10dp"
-        android:background="@color/colorbntdangnhap"
+        android:id="@+id/toolbarchange"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginLeft="-5dp"
+        android:background="@color/colorPrimary">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="match_parent"
-                android:id="@+id/outthongke"
-                android:src="@drawable/exit"/>
+                android:onClick="exit"
+                android:src="@drawable/exit" />
+
             <TextView
-                android:layout_width="match_parent"
+
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Thống kê"
-                android:layout_marginLeft="8dp"
-                android:gravity="center_vertical"
-                android:textSize="22sp"
-                android:textColor="#fff"/>
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="REVENUE STATISTICS"
+                android:textColor="@color/colorr"
+                android:textSize="20dp" />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="5dp">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/hotel" />
+        android:layout_margin="5dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvThongKeNgay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="15dp"
-        android:text="Hôm nay"
-        android:textColor="@color/colorPrimary"
-        android:textSize="26dp"
-        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvThongKeThang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="15dp"
-        android:text="Tháng ngày"
-        android:textColor="@color/colorPrimary"
-        android:textSize="26dp"
-        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvThongKeNam"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="15dp"
-        android:text="Năm 2018:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="26dp"
-        android:textStyle="bold" />
+
+
+
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:id="@+id/tvThongKeThang1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 1"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 2"
+            android:textColor="@color/colorPrimary"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 3"
+            android:textColor="@color/colorPrimary"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 4"
+            android:textColor="@color/colorPrimary"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 5"
+            android:textColor="@color/colorPrimary"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 6"
+            android:textColor="@color/colorPrimary"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 7"
+            android:textColor="@color/colorPrimary"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 8"
+            android:textColor="@color/colorPrimary"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 9"
+            android:textColor="@color/colorPrimary"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 10"
+            android:textColor="@color/colorPrimary"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeThang11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 11"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvThongKeThang12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tháng 12"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongKeNam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"
+            android:text="Tổng Doanh Thu Năm 2018"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

@@ -79,7 +79,7 @@ public class HoaDonChiTietActivity extends AppCompatActivity {
                     }
                     adapter.changeDatasetHDCT(dsHDCT);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Mã sách không tồn tại", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Số phòng không tồn tại", Toast.LENGTH_SHORT).show();
                 }
             }
         } catch (Exception ex) {

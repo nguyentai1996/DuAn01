@@ -24,8 +24,8 @@ public class MapsActivity extends Activity implements OnMapReadyCallback{
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
-        LatLng HOTEL= new LatLng(21.185842, 105.779279);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(HOTEL,13));
-        map.addMarker(new MarkerOptions().title("HOTEL FLASH").position(HOTEL));
+        LatLng sydney = new LatLng(21.039716, 105.803900);
+        map.addMarker(new MarkerOptions().position(sydney).title("Hotel"));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,18));
     }
 }
