@@ -244,7 +244,7 @@
                     android:layout_height="63dp"
                     android:layout_gravity="center_horizontal"
                     android:onClick="location"
-                    android:src="@drawable/statistical" />
+                    android:src="@drawable/locationn" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -285,14 +285,14 @@
                     android:layout_height="57dp"
                     android:layout_gravity="center_horizontal"
                     android:onClick="thongke"
-                    android:src="@drawable/statistical" />
+                    android:src="@drawable/bill" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="7dp"
-                    android:text="ME"
+                    android:text="BILL LIST"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />

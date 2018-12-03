@@ -8,6 +8,8 @@ import android.view.View;
 
 
 import com.example.admin.qlks.bill.HoaDonActivity;
+import com.example.admin.qlks.bill.ListHoaDonActivity;
+import com.example.admin.qlks.billdetail.ListHoaDonChiTietByIDActivity;
 import com.example.admin.qlks.room.ListRoomActivity;
 import com.example.admin.qlks.toproom.RevenueStatisticsActivity;
 import com.example.admin.qlks.adapter.UserActivity;
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void thongke(View view) {
-        Intent intent = new Intent(this,RevenueStatisticsActivity.class);
+        Intent intent = new Intent(this,ListHoaDonActivity.class);
         startActivity(intent);
     }
 }

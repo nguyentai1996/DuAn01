@@ -25,14 +25,9 @@ public class ListHoaDonChiTietByIDActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hoa_don_chi_tiet);
-        imageView = findViewById(R.id.outhoadonDetail);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        setContentView(R.layout.activity_list_hoa_don_chi_tiet_by_id);
+
+
         lvCart = (ListView) findViewById(R.id.lvHoaDonChiTiet);
         hoaDonChiTietDAO = new HoaDonChiTietDAO(ListHoaDonChiTietByIDActivity.this);
         Intent in = getIntent();

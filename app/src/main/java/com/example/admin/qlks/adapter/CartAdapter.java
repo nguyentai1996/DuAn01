@@ -79,10 +79,10 @@ public class CartAdapter extends BaseAdapter {
         } else
             holder = (ViewHolder) convertView.getTag();
         HoaDonChiTiet _entry = (HoaDonChiTiet) arrHoaDonChiTiet.get(position);
-        holder.txtMaSach.setText("Mã sách: " + _entry.getSach().getMaSach());
+        holder.txtMaSach.setText("Mã phòng: " + _entry.getSach().getMaSach());
         holder.txtSoLuong.setText("Số lượng: " + _entry.getSoLuongMua());
-        holder.txtGiaBia.setText("Giá bìa: " + _entry.getSach().getGiaBia() + " vnd");
-        holder.txtThanhTien.setText("Thành tiền: " + _entry.getSoLuongMua() * _entry.getSach().getGiaBia() + " vnd");
+        holder.txtGiaBia.setText("Giá phòng: " + _entry.getSach().getGiaBia() + " usd");
+        holder.txtThanhTien.setText("Thành tiền: " + _entry.getSoLuongMua() * _entry.getSach().getGiaBia() + " usd");
         return convertView;
     }
 
